@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}View Article {% endblock title %}
+{% block content %}
+<h2>view Article</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>BY {{article.auther}} : {{article.date}}</p>
+    <h3>{{article.title}}</h3>
+    <p>{{article.body}}</p>
+    <a href="{% url 'article_Edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    {{form.as_p}}
+</form>
+{% endblock content %}

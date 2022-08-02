@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Update Article {% endblock title %}
+{% block content %}
+<h2>Update Article</h2>
+<p>Are you sure to Update this article <b>{{article.title}}</b> !</p>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success ml-2" type="submit">Update</button>
+</form>
+{% endblock content %}
